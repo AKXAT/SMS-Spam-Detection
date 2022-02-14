@@ -1,4 +1,5 @@
 # will make use of pandas to load the dataset
+from tkinter.tix import Tree
 import pandas as pd
 # we make use of string and nltk to remove conjuctions 
 import string 
@@ -52,3 +53,26 @@ def catagorize_sms():
 spam , ham = catagorize_sms()
 #print(spam[:10])
 #print(ham[:10])
+
+
+# now will get the userinput and try to compare with the generated spam/not spam
+
+def user_input(user_sms): 
+    spam_score = 0
+    ham_score = 0 
+
+    for each_word in user_sms:
+        spam_score += spam.count(each_word)
+        ham_score += ham.count(each_word)
+    if ham_score >= spam_score:
+        return False
+    else:
+        return True
+
+# lets now define the main funtion which takes in the value
+def main(usersms):     
+    processed_usersms = dataPreProcess(str(usersms))
+    return user_input(processed_usersms)
+
+
+#print(main('Our records indicate your Pension is under performing to see higher growth and up to 25% cash release reply PENSION for a free review. To opt out reply STOP'))
