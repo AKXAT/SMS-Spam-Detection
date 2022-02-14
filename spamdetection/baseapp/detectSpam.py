@@ -1,8 +1,7 @@
 # will make use of pandas to load the dataset
-from lib2to3.pgen2.tokenize import tokenize
-from venv import create
 import pandas as pd
-import string # we make use of string and nltk to remove conjuctions 
+# we make use of string and nltk to remove conjuctions 
+import string 
 import nltk
 
 
@@ -33,3 +32,23 @@ def dataPreProcess(sms):
 
 data['refinedsms'] = data['sms'].apply(lambda x : dataPreProcess(x))
 #print(data.head())
+
+
+#Now we need to catagorize the words as spam or not spam
+
+def catagorize_sms():
+    spam_words = []
+    notspam_words = []
+
+    for each_sms in data['refinedsms'][data['lable'] == 'spam']:
+        for each_word in each_sms:
+            spam_words.append(each_word)
+    for each_sms in data['refinedsms'][data['lable'] == 'ham']:
+        for each_word in each_sms:
+            notspam_words.append(each_word)
+    return spam_words,notspam_words
+
+
+spam , ham = catagorize_sms()
+#print(spam[:10])
+#print(ham[:10])
