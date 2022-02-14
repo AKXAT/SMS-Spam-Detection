@@ -1,4 +1,18 @@
 {% extends 'baseapp/base.html' %}
 {% block content %}
-<h1>test</h1>
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="card text-white bg-dark mb-3" style="padding: 10px;">
+        <div class="card-body">
+            <div class="row mb-3">
+                <form action="{% url 'sms' %}" method = "POST">
+                    {% csrf_token %}
+                    <div class="col mb-3"><label for="your_name">Your SMS: </label></div>
+                    <div class="col mb-3"><input class="form-control" id="sms" type="text" name="sms"></div>
+                    <div class="col mb-3 text-center"><input type="submit" class="btn btn-primary mb-3 " value="Check"></div>
+                </form>
+            </div>
+        </div>
+      </div>
+</div>
+
 {% endblock content %}

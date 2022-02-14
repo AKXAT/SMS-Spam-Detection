@@ -72,7 +72,7 @@ def user_input(user_sms):
 # lets now define the main funtion which takes in the value
 def main(usersms):     
     processed_usersms = dataPreProcess(str(usersms))
-    return user_input(processed_usersms)
+    return (user_input(processed_usersms))
 
 
 #print(main('Our records indicate your Pension is under performing to see higher growth and up to 25% cash release reply PENSION for a free review. To opt out reply STOP'))
