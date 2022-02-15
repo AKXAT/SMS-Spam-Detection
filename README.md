@@ -1,7 +1,7 @@
 # SMS Spam Detector
 
 ## GIF of Web Application
-![alt text]()
+![alt text](https://github.com/AKXAT/SMS-Spam-Detection/blob/main/GIF/gif.gif)
 
 
 ## About
