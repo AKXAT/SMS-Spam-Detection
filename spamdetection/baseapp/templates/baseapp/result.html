@@ -1,6 +1,25 @@
 {% extends 'baseapp/base.html' %}
 {% block content %}
 
-<h1>OK</h1>
+
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="card text-white bg-dark mb-3" style="padding: 10px;">
+        <div class="card-body text-center">
+            <div class="col d-flex justify-content-center ">
+                {% if Spam == True %}
+                    <div class="card text-white bg-danger mb-3" style="text-align: center;">
+                        <div class="card-header">It's a SPAM!!</div>
+                        <h1>⚠</h1>
+                    </div>
+                {% else %}
+                    <div class="card text-white bg-success mb-3" style="text-align: center;">
+                        <div class="card-header">Not a SPAM </div>
+                        <h1>❤</h1>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+      </div>
+</div>
 
 {% endblock content %}

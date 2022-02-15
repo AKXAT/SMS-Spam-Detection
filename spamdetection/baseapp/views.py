@@ -1,6 +1,7 @@
 from tkinter.tix import Tree
 from django.template.response import TemplateResponse
 from django.http import HttpResponse
+from matplotlib.style import context
 from baseapp import detectSpam
 
 # Create your views here.
@@ -14,10 +15,14 @@ def resultPageView(request):
         mystring = str(request.POST['sms'])
         if detectSpam.main(mystring) == True:
             #print('YESSS')
-            return TemplateResponse(request, 'baseapp/result.html',{})
+            context = {
+                'Spam':True
+            }
         else:
             #print('noooo')
-            return TemplateResponse(request, 'baseapp/result.html',{})
+            context = {
+                'Spam':False
+            }
     
-    return TemplateResponse(request, 'baseapp/result.html',{})
+    return TemplateResponse(request, 'baseapp/result.html',context)
 
