@@ -1,5 +1,4 @@
 # will make use of pandas to load the dataset
-from tkinter.tix import Tree
 import pandas as pd
 # we make use of string and nltk to remove conjuctions 
 import string 
@@ -7,7 +6,7 @@ import nltk
 
 
 # here we are just loading the dataset 
-data = pd.read_csv('D:\Spam Detection\SMSSpamCollection.txt',
+data = pd.read_csv('SMSSpamCollection.txt',
 sep='\t',
 header=None,
 names=['lable','sms'])

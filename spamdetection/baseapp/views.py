@@ -1,7 +1,4 @@
-from tkinter.tix import Tree
 from django.template.response import TemplateResponse
-from django.http import HttpResponse
-from matplotlib.style import context
 from baseapp import detectSpam
 
 # Create your views here.
